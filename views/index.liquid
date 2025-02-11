@@ -1,6 +1,30 @@
 {% render 'partials/head.liquid' %}
 
-<h2>Students</h2>
+<main>
+  <section>
+    <h2>Filter op squad, ID en favoriete CSS!</h2>
+  </section>
+
+  <section>
+    <h3><a>1G</a></h3>
+    <p>of</p>
+    <h3><a>1H</a></h3>
+  </section>
+
+  <section>
+    <label for="studentid">Student ID:</label>
+    <input type="search" id="studentid">
+    <a href="" alt="Zoeken op ID">Search</a>
+  </section>
+
+  <section>
+    <label for="favcss">favoriete CSS property:</label>
+    <input type="search" id="favcss">
+    <a href="" alt="zoeken op css">Search</a>
+  </section>
+</main>
+
+<h4>Students</h4>
 <ul>
   {% for person in persons %}
     <li><a href="/detail/{{ person.id }}">{{ person.name }}</a></li>
