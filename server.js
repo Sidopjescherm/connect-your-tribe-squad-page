@@ -76,3 +76,30 @@ app.listen(app.get('port'), function () {
   // Toon een bericht in de console en geef het poortnummer door
   console.log(`Application started on http://localhost:${app.get('port')}`)
 })
+
+
+// Eigen code
+
+app.get('/detail/:id', async function (request, response) {
+  // Gebruik de request parameter id en haal de juiste persoon uit de WHOIS API op
+  const personDetailResponse = await fetch('https://fdnd.directus.app/items/person/' + request.params.id)
+  // En haal daarvan de JSON op
+  const personDetailResponseJSON = await personDetailResponse.json()
+  
+  // Render detail.liquid uit de views map en geef de opgehaalde data mee als variable, genaamd person
+  // Geef ook de eerder opgehaalde squad data mee aan de view
+  response.render('detail.liquid', {person: personDetailResponseJSON.data, squads: squadResponseJSON.data})
+})
+
+
+// Hier komt mijn eigen code
+
+app.get('/squad_1h', async function (request, response){
+
+})
+
+app.get('/team_blaze', async function (request, response) {
+  const teamblaze = await fetch ('https://fdnd.directus.app/items/person/?filter={%22team%22:%22Blaze%22}')
+  const teamblazeJSON = await teamblaze.json()
+  response.render('team_blaze.liquid', {persons: teamblazeJSON.data, squads: squadResponseJSON.data})
+})
