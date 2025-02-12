@@ -1,0 +1,21 @@
+body{
+    color: green;
+}
+
+ul{
+    display: flex;
+    flex-wrap: wrap;
+    width: auto;
+    justify-content: center;
+}
+
+li{
+    padding: 1em;
+}
+
+li img{
+    width: 5em;
+    height: 5em;
+    gap: 1em;
+
+}
