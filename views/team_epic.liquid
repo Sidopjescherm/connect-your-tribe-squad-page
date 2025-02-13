@@ -1,0 +1,7 @@
+<h1>Team Epic</h1>
+
+<ul>
+  {% for person in persons %}
+    <li><a href="/student/{{ person.id }}">{{ person.name }}</a></li>
+  {% endfor %}
+</ul>

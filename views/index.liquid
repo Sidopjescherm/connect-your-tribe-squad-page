@@ -7,13 +7,24 @@
 
   <section>
     <a href="team_blaze">Team Blaze</a>
+    <a href="team_rocket">Team Rocket</a>
+    <a href="team_Flux">Team Flux</a>
+    <a href="team_chill">Team Chill</a>
+    <a href="team_hype">Team Hype</a>
+    <a href="team_zen">Team Zen</a>
+    <a href="team_cool">Team Cool</a>
+    <a href="team_rad">Team Rad</a>
+    <a href="team_epic">Team Epic</a>
+    <a href="team_awesome">Team Awesome</a>
+    <a href="team_spirit">Team Spirit</a>
+    <a href="team_storm">Team Storm</a>
   </section>
 </main>
 
 <h4>Students</h4>
 <ul>
   {% for person in persons %}
-    <li><img src="{{ person.avatar }}"><a href="/detail/{{ person.id }}">{{ person.name }}</a></li>
+    <li><img src="{{ person.avatar }}"><a href="/detail/{{ person.id }}">{{ person.name }} {{ person.team }}</a></li>
   {% endfor %}
 </ul>
 
