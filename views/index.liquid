@@ -3,9 +3,7 @@
 <main>
   <section>
     <h2>Kies het team</h2>
-  </section>
 
-  <section>
     <a href="team_blaze">Team Blaze</a>
     <a href="team_rocket">Team Rocket</a>
     <a href="team_Flux">Team Flux</a>
@@ -19,12 +17,18 @@
     <a href="team_spirit">Team Spirit</a>
     <a href="team_storm">Team Storm</a>
   </section>
+
+  <section>
+    <h3>Kies de Squad</h3>
+
+    <a href="squad_1_g">Squad 1G</a>
+  </section>
 </main>
 
 <h4>Students</h4>
 <ul>
   {% for person in persons %}
-    <li><img src="{{ person.avatar }}"><a href="/detail/{{ person.id }}">{{ person.name }} {{ person.team }}</a></li>
+    <li><img src="https://github.com/{{ person.github_handle }}.png"><a href="/detail/{{ person.id }}">{{ person.name }} {{ person.team }} </a></li>
   {% endfor %}
 </ul>
 
