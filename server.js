@@ -188,9 +188,11 @@ app.get('/team_storm', async function (request, response) {
   const team_stormJSON = await team_storm.json()
   response.render('team_storm.liquid', {persons: team_stormJSON.data, squads: squadResponseJSON.data})
 })
+
 //Squad 1G
 app.get('/squad_1_g', async function (request, response) {
   const squad_1_g = await fetch ('https://fdnd.directus.app/items/person/?sort=squads&filter[squads][_between]=74,97')
   const squad_1_gJSON = await squad_1_g.json()
   response.render('squad_1_g.liquid', {persons: squad_1_gJSON.data, squads: squadResponseJSON.data})
 })
+

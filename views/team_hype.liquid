@@ -2,6 +2,6 @@
 
 <ul>
   {% for person in persons %}
-    <li><a href="/student/{{ person.id }}">{{ person.name }}</a></li>
+    <li><img src="https://github.com/{{ person.github_handle }}.png"><a href="/detail/{{ person.id }}">{{ person.name }} {{ person.team }} </a></li>
   {% endfor %}
 </ul>
