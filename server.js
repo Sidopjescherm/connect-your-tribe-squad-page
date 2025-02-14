@@ -102,91 +102,91 @@ app.get('/squad_1h', async function (request, response){
 app.get('/team_blaze', async function (request, response) {
   const teamblaze = await fetch ('https://fdnd.directus.app/items/person/?filter={%22team%22:%22Blaze%22}')
   const teamblazeJSON = await teamblaze.json()
-  response.render('team_blaze.liquid', {persons: teamblazeJSON.data, squads: squadResponseJSON.data})
+  response.render('teamleden.liquid', {persons: teamblazeJSON.data, squads: squadResponseJSON.data, team_name: 'Blaze'})
 })
 
 // Team Rocket
 app.get('/team_rocket', async function (request, response) {
   const teamrocket = await fetch ('https://fdnd.directus.app/items/person/?filter={%22team%22:%22Rocket%22}')
   const teamrocketJSON = await teamrocket.json()
-  response.render('team_rocket.liquid', {persons: teamrocketJSON.data, squads: squadResponseJSON.data})
+  response.render('teamleden.liquid', {persons: teamrocketJSON.data, squads: squadResponseJSON.data, team_name: 'Rocket'})
 })
 
 // Team Flux
 app.get('/team_Flux', async function (request, response) {
   const teamflux = await fetch ('https://fdnd.directus.app/items/person/?filter={%22team%22:%22Flux%22}')
   const teamfluxJSON = await teamflux.json()
-  response.render('team_Flux.liquid', {persons: teamfluxJSON.data, squads: squadResponseJSON.data})
+  response.render('teamleden.liquid', {persons: teamfluxJSON.data, squads: squadResponseJSON.data, team_name: 'Flux'})
 })
 
 //Team Chill
 app.get('/team_chill', async function (request, response) {
   const teamchill = await fetch ('https://fdnd.directus.app/items/person/?filter={%22team%22:%22Chill%22}')
   const teamchillJSON = await teamchill.json()
-  response.render('team_chill.liquid', {persons: teamchillJSON.data, squads: squadResponseJSON.data})
+  response.render('teamleden.liquid', {persons: teamchillJSON.data, squads: squadResponseJSON.data, team_name: 'Chill'})
 })
 
 //Team Hype
 app.get('/team_hype', async function (request, response) {
   const team_hype = await fetch ('https://fdnd.directus.app/items/person/?filter={%22team%22:%22Hype%22}')
   const team_hypeJSON = await team_hype.json()
-  response.render('team_hype.liquid', {persons: team_hypeJSON.data, squads: squadResponseJSON.data})
+  response.render('teamleden.liquid', {persons: team_hypeJSON.data, squads: squadResponseJSON.data, team_name: 'Hype'})
 })
 
 //Team Peak
 app.get('/team_peak', async function (request, response) {
   const team_peak = await fetch ('https://fdnd.directus.app/items/person/?filter={%22team%22:%22Peak%22}')
   const team_peakJSON = await team_peak.json()
-  response.render('team_peak.liquid', {persons: team_peakJSON.data, squads: squadResponseJSON.data})
+  response.render('teamleden.liquid', {persons: team_peakJSON.data, squads: squadResponseJSON.data, team_name: 'Peak'})
 })
 
 //Team Zen
 app.get('/team_zen', async function (request, response) {
   const team_zen = await fetch ('https://fdnd.directus.app/items/person/?filter={%22team%22:%22Zen%22}')
   const team_zenJSON = await team_zen.json()
-  response.render('team_zen.liquid', {persons: team_zenJSON.data, squads: squadResponseJSON.data})
+  response.render('teamleden.liquid', {persons: team_zenJSON.data, squads: squadResponseJSON.data, team_name: 'Zen'})
 })
 
 //Team Cool
 app.get('/team_cool', async function (request, response) {
   const team_cool = await fetch ('https://fdnd.directus.app/items/person/?filter={%22team%22:%20%22Cool%22}')
   const team_coolJSON = await team_cool.json()
-  response.render('team_cool.liquid', {persons: team_coolJSON.data, squads: squadResponseJSON.data})
+  response.render('teamleden.liquid', {persons: team_coolJSON.data, squads: squadResponseJSON.data, team_name: 'Cool'})
 })
 
 //Team Rad
 app.get('/team_rad', async function (request, response) {
   const team_rad = await fetch ('https://fdnd.directus.app/items/person/?filter={%22team%22:%20%22Rad%22}')
   const team_radJSON = await team_rad.json()
-  response.render('team_rad.liquid', {persons: team_radJSON.data, squads: squadResponseJSON.data})
+  response.render('teamleden.liquid', {persons: team_radJSON.data, squads: squadResponseJSON.data, team_name: 'Rad'})
 })
 
 //Team Epic
 app.get('/team_epic', async function (request, response) {
   const team_epic = await fetch ('https://fdnd.directus.app/items/person/?filter={%22team%22:%20%22Epic%22}')
   const team_epicJSON = await team_epic.json()
-  response.render('team_epic.liquid', {persons: team_epicJSON.data, squads: squadResponseJSON.data})
+  response.render('teamleden.liquid', {persons: team_epicJSON.data, squads: squadResponseJSON.data, team_name: 'Epic'})
 })
 
 //Team Awesome
 app.get('/team_awesome', async function (request, response) {
   const team_awesome = await fetch ('https://fdnd.directus.app/items/person/?filter={%22team%22:%20%22Awesome%22}')
   const team_awesomeJSON = await team_awesome.json()
-  response.render('team_awesome.liquid', {persons: team_awesomeJSON.data, squads: squadResponseJSON.data})
+  response.render('teamleden.liquid', {persons: team_awesomeJSON.data, squads: squadResponseJSON.data, team_name: 'Awesome'})
 })
 
 //Team Spirit
 app.get('/team_spirit', async function (request, response) {
   const team_spirit = await fetch ('https://fdnd.directus.app/items/person/?filter={%22team%22:%20%22Spirit%22}')
   const team_spiritJSON = await team_spirit.json()
-  response.render('team_spirit.liquid', {persons: team_spiritJSON.data, squads: squadResponseJSON.data})
+  response.render('teamleden.liquid', {persons: team_spiritJSON.data, squads: squadResponseJSON.data, team_name: 'Spirit'})
 })
 
 //Team Storm
 app.get('/team_storm', async function (request, response) {
   const team_storm = await fetch ('https://fdnd.directus.app/items/person/?filter={%22team%22:%20%22Storm%22}')
   const team_stormJSON = await team_storm.json()
-  response.render('team_storm.liquid', {persons: team_stormJSON.data, squads: squadResponseJSON.data})
+  response.render('teamleden.liquid', {persons: team_stormJSON.data, squads: squadResponseJSON.data, team_name: 'Storm'})
 })
 
 //Squad 1G
@@ -196,3 +196,17 @@ app.get('/squad_1_g', async function (request, response) {
   response.render('squad_1_g.liquid', {persons: squad_1_gJSON.data, squads: squadResponseJSON.data})
 })
 
+app.get('/teams/:team', async function (request, response) {
+  console.log(request.params.team)
+
+  // TODO voor Sid: zorgen dat je request.params.team kunt gebruiken in de volgende URL
+  const teamResponse = await fetch ('https://fdnd.directus.app/items/person/?filter={"team":{"_contains":"' + request.params.team + '"}}')
+  const teamResponseJSON = await teamResponse.json()
+
+  console.log(teamResponseJSON)
+
+  // Als de data 'leeg', laat dan een andere pagina zien...
+
+  // TODO voor Sid: deze liquid file hernoemen (Naming Things)
+  response.render('teamleden.liquid', {persons: teamResponseJSON.data, squads: squadResponseJSON.data, team_name: request.params.team})
+})
