@@ -105,6 +105,14 @@ app.get('/squad_1_g', async function (request, response) {
   response.render('squad_1_g.liquid', {persons: squad_1_gJSON.data, squads: squadResponseJSON.data})
 })
 
+//Squad 1H
+app.get('/squad_1_h', async function (request, response) {
+  const squad_1_h = await fetch ('https://fdnd.directus.app/items/person/?sort=squads&filter[squads][_between]=74,97')
+  const squad_1_gJSON = await squad_1_g.json()
+  response.render('squad_1_g.liquid', {persons: squad_1_gJSON.data, squads: squadResponseJSON.data})
+})
+
+// Alle team pagina's
 app.get('/teams/:team', async function (request, response) {
   console.log(request.params.team)
 
@@ -115,7 +123,9 @@ app.get('/teams/:team', async function (request, response) {
   console.log(teamResponseJSON)
 
   // Als de data 'leeg', laat dan een andere pagina zien...
+  if (teamResponseJSON.data.length == 0) {
 
-  // TODO voor Sid: deze liquid file hernoemen (Naming Things)
-  response.render('teamleden.liquid', {persons: teamResponseJSON.data, squads: squadResponseJSON.data, team_name: request.params.team})
+  } else 
+    // TODO voor Sid: deze liquid file hernoemen (Naming Things)
+    response.render('teamleden.liquid', {persons: teamResponseJSON.data, squads: squadResponseJSON.data, team_name: request.params.team})
 })
