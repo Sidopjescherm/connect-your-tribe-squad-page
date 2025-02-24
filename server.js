@@ -1,6 +1,6 @@
 // Importeer het npm package Express (uit de door npm aangemaakte node_modules map)
 // Deze package is geïnstalleerd via `npm install`, en staat als 'dependency' in package.json
-import express from 'express'
+import express, { response } from 'express'
 
 // Importeer de Liquid package (ook als dependency via npm geïnstalleerd)
 import { Liquid } from 'liquidjs';
@@ -13,7 +13,6 @@ const squadResponseJSON = await squadResponse.json()
 
 // Controleer de data in je console (Let op: dit is _niet_ de console van je browser, maar van NodeJS, in je terminal)
 // console.log(squadResponseJSON)
-
 
 // Maak een nieuwe Express applicatie aan, waarin we de server configureren
 const app = express()
@@ -47,13 +46,6 @@ app.get('/', async function (request, response) {
   // Render index.liquid uit de views map en geef de opgehaalde data mee als variabele, genaamd persons
   // Geef ook de eerder opgehaalde squad data mee aan de view
   response.render('index.liquid', {persons: personResponseJSON.data, squads: squadResponseJSON.data})
-})
-
-// Maak een POST route voor de index; hiermee kun je bijvoorbeeld formulieren afvangen
-app.post('/', async function (request, response) {
-  // Je zou hier data kunnen opslaan, of veranderen, of wat je maar wilt
-  // Er is nog geen afhandeling van POST, redirect naar GET op /
-  response.redirect(303, '/')
 })
 
 // Maak een GET route voor een detailpagina met een request parameter id
@@ -128,4 +120,19 @@ app.get('/teams/:team', async function (request, response) {
   } else 
     // TODO voor Sid: deze liquid file hernoemen (Naming Things)
     response.render('teamleden.liquid', {persons: teamResponseJSON.data, squads: squadResponseJSON.data, team_name: request.params.team})
+})
+
+//Hier komen de berichten
+
+let messages = []
+
+app.get('/berichten', async function (request, response) {
+  response.render('berichten.liquid', {messages: messages})
+})
+
+app.post('/berichten', async function (request, response) {
+
+  messages.push(request.body.tekst)
+  
+  response.redirect(303, '/berichten')
 })
